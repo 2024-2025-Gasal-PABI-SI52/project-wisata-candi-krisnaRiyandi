@@ -38,56 +38,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                //TODO: 5. Buat TextFromField untuk nama lengkap
-                TextFormField(
-                  controller: _fullnameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nama',
-                    hintText: 'Masukkan nama',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                //TODO: 6. Buat TextFromField untuk nama pengguna
-                const SizedBox(height: 20,),
-                TextFormField(
-                  controller: _usernameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nama Pengguna',
-                    hintText: 'Masukkan nama pengguna',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                //TODO: 7. Buat TextFromField untuk kata sandi
-                const SizedBox(height: 20,),
-                TextFormField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Kata Sandi',
-                    hintText: 'Masukkan kata sandi',
-                    border: const OutlineInputBorder(),
-                    errorText: _errorText.isNotEmpty ? _errorText: null,
-                    suffixIcon: IconButton(
-                      onPressed: (){
-                        setState(() {
-                          _obscurePassword = !_obscurePassword;
-                        });
-                      },
-                      icon: Icon(
-                      _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                      ),
+                  //TODO: 5. Buat TextFromField untuk nama lengkap
+                  TextFormField(
+                    controller: _fullnameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Nama',
+                      hintText: 'Masukkan nama',
+                      border: OutlineInputBorder(),
                     ),
                   ),
-                  obscureText: _obscurePassword,
-                ),
-                //TODO: 8. Buat TextFromField untuk Sign In
-                const SizedBox(height: 20,),
-                ElevatedButton(
-                  onPressed: (){}, 
-                  child: const Text('Sign Up'),
+                  //TODO: 6. Buat TextFromField untuk nama pengguna
+                  const SizedBox(
+                    height: 20,
                   ),
-                  
+                  TextFormField(
+                    controller: _usernameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Nama Pengguna',
+                      hintText: 'Masukkan nama pengguna',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  //TODO: 7. Buat TextFromField untuk kata sandi
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Kata Sandi',
+                      hintText: 'Masukkan kata sandi',
+                      border: const OutlineInputBorder(),
+                      errorText: _errorText.isNotEmpty ? _errorText : null,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
+                        icon: Icon(
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
+                      ),
+                    ),
+                    obscureText: _obscurePassword,
+                  ),
+                  //TODO: 8. Buat TextFromField untuk Sign In
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Sign Up'),
+                  ),
                 ],
-                
               ),
             ),
           ),
