@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:wisata_candi/data/candi_data.dart';
+import 'package:wisata_candi/screens/detail_screen.dart';
+import 'package:wisata_candi/screens/signup_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   SignInScreen({super.key});
@@ -26,6 +29,7 @@ class _SignInScreenState extends State<SignInScreen> {
       //TODO: 2. Pasang AppBar
       appBar: AppBar(
         title: const Text('Sign In'),
+        backgroundColor: Color.fromARGB(255, 223, 214, 240),
       ),
       //TODO: 3. Pasang body
       body: Center(
@@ -78,7 +82,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DetailScreen(candi: candiList[1])),
+                      );
+                    },
                     child: const Text('Sign In'),
                   ),
                   //TODO: 8. Pasang TextButton untuk SignUp
@@ -102,7 +113,14 @@ class _SignInScreenState extends State<SignInScreen> {
                             color: Colors.blue,
                             decoration: TextDecoration.underline,
                           ),
-                          recognizer: TapGestureRecognizer()..onTap = () {},
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpScreen()),
+                              );
+                            },
                         ),
                       ],
                     ),
