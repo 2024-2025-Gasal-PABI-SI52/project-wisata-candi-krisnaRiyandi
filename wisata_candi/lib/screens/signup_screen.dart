@@ -20,6 +20,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool _isSignUp = false;
 
   bool _obscurePassword = true;
+  // // Fungsi untuk validasi password
+  // String? _validatePassword(String? value) {
+  //   if (value == null || value.isEmpty) {
+  //     return 'Password is required';
+  //   }
+  //   if (value.length < 6) {
+  //     return 'Password should be at least 6 characters';
+  //   }
+  //   return null;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +102,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
+                    //validator: _validatePassword,
                     obscureText: _obscurePassword,
                   ),
                   //TODO: 8. Buat TextFromField untuk Sign In
