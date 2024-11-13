@@ -38,53 +38,62 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                //TODO: 5. Buat TextFromField untuk nama pengguna
-                TextFormField(
-                  controller: _usernameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nama Pengguna',
-                    hintText: 'Masukkan nama pengguna',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                //TODO: 6. Buat TextFromField untuk kata sandi
-                const SizedBox(height: 20,),
-                TextFormField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Kata Sandi',
-                    hintText: 'Masukkan kata sandi',
-                    border: const OutlineInputBorder(),
-                    errorText: _errorText.isNotEmpty ? _errorText: null,
-                    suffixIcon: IconButton(
-                      onPressed: (){
-                        setState(() {
-                          _obscurePassword = !_obscurePassword;
-                        });
-                      },
-                      icon: Icon(
-                      _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                      ),
+                  //TODO: 5. Buat TextFromField untuk nama pengguna
+                  TextFormField(
+                    controller: _usernameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Nama Pengguna',
+                      hintText: 'Masukkan nama pengguna',
+                      border: OutlineInputBorder(),
                     ),
                   ),
-                  obscureText: _obscurePassword,
-                ),
-                //TODO: 7. Buat TextFromField untuk Sign In
-                const SizedBox(height: 20,),
-                ElevatedButton(
-                  onPressed: (){}, 
-                  child: const Text('Sign In'),
+                  //TODO: 6. Buat TextFromField untuk kata sandi
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Kata Sandi',
+                      hintText: 'Masukkan kata sandi',
+                      border: const OutlineInputBorder(),
+                      errorText: _errorText.isNotEmpty ? _errorText : null,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
+                        icon: Icon(
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
+                      ),
+                    ),
+                    obscureText: _obscurePassword,
+                  ),
+                  //TODO: 7. Buat TextFromField untuk Sign In
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Sign In'),
                   ),
                   //TODO: 8. Pasang TextButton untuk SignUp
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   // TextButton(
-                  //   onPressed: (){}, 
+                  //   onPressed: (){},
                   //   child: Text('Belum punya akun? Daftar di sini.'),
                   //   ),
                   RichText(
                     text: TextSpan(
                       text: 'Belum punya akun?',
-                      style: const TextStyle(fontSize: 16, color: Colors.deepPurple),
+                      style: const TextStyle(
+                          fontSize: 16, color: Colors.deepPurple),
                       children: [
                         TextSpan(
                           text: 'Daftar di sini.',
@@ -93,14 +102,12 @@ class _SignInScreenState extends State<SignInScreen> {
                             color: Colors.blue,
                             decoration: TextDecoration.underline,
                           ),
-                          recognizer: TapGestureRecognizer()
-                          ..onTap = (){},
+                          recognizer: TapGestureRecognizer()..onTap = () {},
                         ),
                       ],
                     ),
                   ),
                 ],
-                
               ),
             ),
           ),

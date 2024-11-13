@@ -26,6 +26,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
       //TODO: 2. Pasang AppBar
       appBar: AppBar(
         title: const Text('Sign Up'),
+        backgroundColor: Color.fromARGB(255, 223, 214, 240),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Fungsi untuk kembali ke layar sebelumnya
+            //Navigator.pop(context);
+          },
+        ),
       ),
       //TODO: 3. Pasang body
       body: Center(
