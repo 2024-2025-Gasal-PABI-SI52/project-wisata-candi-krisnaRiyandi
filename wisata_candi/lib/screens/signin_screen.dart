@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:wisata_candi/data/candi_data.dart';
 import 'package:wisata_candi/screens/detail_screen.dart';
+import 'package:wisata_candi/screens/home_screen.dart';
 import 'package:wisata_candi/screens/signup_screen.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -85,9 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DetailScreen(candi: candiList[1])),
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
                       );
                     },
                     child: const Text('Sign In'),
